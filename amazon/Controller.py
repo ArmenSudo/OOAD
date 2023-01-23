@@ -7,7 +7,7 @@ ware_house_all = WareHouse()
 
 def add_in_wareHouser(product, count):
     ware_house_all.add_product(product, count)
-    ware_house_all.get_info(product.name)
+    ware_house_all.get_info(product.get_name())
 
 
 iphone = Product('Iphone', 150, 'Lavna')

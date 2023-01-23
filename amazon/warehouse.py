@@ -1,17 +1,13 @@
-from collections import namedtuple
-from product import Product
-
-
 class WareHouse:
     def __init__(self):
         self.wareHouse = {}
 
     def add_product(self, product, count):
 
-        if self.wareHouse.get(product.name, 0):
-            self.wareHouse[product.name][1] += count
+        if self.wareHouse.get(product.get_name(), 0):
+            self.wareHouse[product.get_name()][1] += count
         else:
-            self.wareHouse[product.name] = [product, count]
+            self.wareHouse[product.get_name()] = [product, count]
 
     def get_info(self, name):
         self.wareHouse[name][0].info()
