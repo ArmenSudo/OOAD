@@ -30,6 +30,7 @@ class Spreadsheet:
             print('Out of range!')
             return
         self._sh.insert(row, [Cell() for y in range(len(self._sh[0]))])
+        self._row += 1
 
     def addColumn(self, column):
         if column > self._columns:
@@ -38,6 +39,7 @@ class Spreadsheet:
 
         for x in self._sh:
             x.insert(column, Cell())
+        self._columns += 1
 
     def removeRow(self, row):
         if row > self._row:
@@ -45,6 +47,7 @@ class Spreadsheet:
             return
 
         del self._sh[row]
+        self._row -= 1
 
     def removeColumn(self, column):
         if column >= self._columns:
@@ -53,6 +56,8 @@ class Spreadsheet:
 
         for x in self._sh:
             del x[column]
+
+        self._columns -= 1
 
     def swapRows(self, first_row, second_row):
         if first_row >= self._row or second_row >= self._row:
