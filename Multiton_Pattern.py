@@ -1,6 +1,6 @@
 class Multiton:
     __instances = {}
-    __max_instances = 5
+    __max_instances = 3
 
     def __new__(cls, key):
         if key not in cls.__instances and len(cls.__instances) < cls.__max_instances:
